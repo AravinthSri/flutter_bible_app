@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "title": "Bible App",
+  "@title": {
+    "description": "Application title"
+  },
+  "subTitle": "Read. Explore. Grow.",
+  "@subTitle": {
+    "description": "Application subtitle"
+  }
+}

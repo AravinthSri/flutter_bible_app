@@ -109,6 +109,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Read. Explore. Grow.'**
   String get subTitle;
+
+  /// Home screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Bible Translations'**
+  String get homeScreenTitle;
 }
 
 class _AppLocalizationsDelegate

@@ -13,4 +13,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get subTitle => 'Read. Explore. Grow.';
+
+  @override
+  String get homeScreenTitle => 'Bible Translations';
 }

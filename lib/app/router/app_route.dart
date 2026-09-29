@@ -1,7 +1,7 @@
 import 'package:bible_app/app/router/app_deeplink.dart';
-import 'package:bible_app/features/home/home_screen.dart';
-import 'package:bible_app/features/splash/cubit/splash_cubit.dart';
-import 'package:bible_app/features/splash/splash_screen.dart';
+import 'package:bible_app/presentation/home/home_screen.dart';
+import 'package:bible_app/presentation/splash/cubit/splash_cubit.dart';
+import 'package:bible_app/presentation/splash/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 

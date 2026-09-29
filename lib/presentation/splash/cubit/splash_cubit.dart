@@ -1,4 +1,4 @@
-import 'package:bible_app/features/splash/cubit/splash_state.dart';
+import 'package:bible_app/presentation/splash/cubit/splash_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashCubit extends Cubit<SplashState> {

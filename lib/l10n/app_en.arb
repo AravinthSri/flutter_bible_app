@@ -7,5 +7,9 @@
   "subTitle": "Read. Explore. Grow.",
   "@subTitle": {
     "description": "Application subtitle"
+  },
+  "homeScreenTitle": "Bible Translations",
+  "@homeScreenTitle": {
+    "description": "Home screen title"
   }
 }

@@ -7,5 +7,17 @@
   "subTitle": "வாசியுங்கள். ஆராயுங்கள். வளருங்கள்.",
   "@subTitle": {
     "description": "செயலித் தலைப்பு துணைத் தலைப்பு"
+  },
+  "homeScreenTitle": "பைபிள் மொழிபெயர்ப்புகள்",
+  "@homeScreenTitle": {
+    "description": "Home screen title"
+  },
+  "homeLoadingContent": "மொழிபெயர்ப்புகள் ஏற்றுகிறது...",
+  "@homeLoadingContent": {
+    "description": "Home screen loading content"
+  },
+  "homeLoadingDescription": "கிடைக்கும் மொழிபெயர்ப்புகளை பெறுவதற்காக காத்திருங்கள்",
+  "@homeLoadingDescription": {
+    "description": "Home screen loading description"
   }
 }

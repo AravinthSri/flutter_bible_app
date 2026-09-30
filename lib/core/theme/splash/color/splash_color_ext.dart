@@ -1,3 +1,4 @@
+import 'package:bible_app/core/theme/app_color.dart';
 import 'package:bible_app/core/theme/splash/color/splash_color.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class SplashColorExt extends ThemeExtension<SplashColorExt> {
     icon: SplashColor.splashIconLight,
     title: SplashColor.splashTitleLight,
     subTitle: SplashColor.splashSubtitleLight,
-    loading: SplashColor.splashLoaderLight,
+    loading: AppColor.primary,
   );
 
   static const dark = SplashColorExt(
@@ -29,7 +30,7 @@ class SplashColorExt extends ThemeExtension<SplashColorExt> {
     icon: SplashColor.splashIconDark,
     title: SplashColor.splashTitleDark,
     subTitle: SplashColor.splashSubtitleDark,
-    loading: SplashColor.splashLoaderDark,
+    loading: AppColor.primary,
   );
 
   @override

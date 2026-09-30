@@ -1,4 +1,7 @@
 import 'package:bible_app/core/theme/app_color.dart';
+import 'package:bible_app/core/theme/home/color/avatar/avatar_colors_ext.dart';
+import 'package:bible_app/core/theme/home/color/home/home_color_ext.dart';
+import 'package:bible_app/core/theme/home/typography/home_typography.dart';
 import 'package:bible_app/core/theme/splash/color/splash_color_ext.dart';
 import 'package:bible_app/core/theme/splash/typography/splash_typography.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +33,10 @@ class AppTheme {
       extensions: [
         SplashColorExt.light,
         SplashTypography.build(locale),
+
+        HomeColorExt.light,
+        AvatarColorExtension.light,
+        HomeTypography.build(locale),
       ],
     );
   }
@@ -44,6 +51,10 @@ class AppTheme {
       extensions: [
         SplashColorExt.dark,
         SplashTypography.build(locale),
+
+        HomeColorExt.dark,
+        AvatarColorExtension.dark,
+        HomeTypography.build(locale),
       ],
     );
   }

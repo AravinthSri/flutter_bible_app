@@ -11,5 +11,13 @@
   "homeScreenTitle": "Bible Translations",
   "@homeScreenTitle": {
     "description": "Home screen title"
+  },
+  "homeLoadingContent": "Loading translations...",
+  "@homeLoadingContent": {
+    "description": "Home screen loading content"
+  },
+  "homeLoadingDescription": "Please wait while we fetch available translations",
+  "@homeLoadingDescription": {
+    "description": "Home screen loading description"
   }
 }

@@ -9,13 +9,13 @@ class BibleSubTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appLocalizations = AppLocalizations.of(context)!;
-    final splashTypography = Theme.of(
+    final typography = Theme.of(
       context,
     ).extension<SplashTypographyExt>()!;
-    final splashColor = Theme.of(context).extension<SplashColorExt>()!;
+    final color = Theme.of(context).extension<SplashColorExt>()!;
     return Text(
       appLocalizations.subTitle,
-      style: splashTypography.subTitle.copyWith(color: splashColor.subTitle),
+      style: typography.subTitle.copyWith(color: color.subTitle),
     );
   }
 }

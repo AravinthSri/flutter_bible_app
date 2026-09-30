@@ -16,4 +16,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeScreenTitle => 'Bible Translations';
+
+  @override
+  String get homeLoadingContent => 'Loading translations...';
+
+  @override
+  String get homeLoadingDescription =>
+      'Please wait while we fetch available translations';
 }

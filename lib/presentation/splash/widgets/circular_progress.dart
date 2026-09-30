@@ -6,10 +6,10 @@ class CircularProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final splashColors = Theme.of(context).extension<SplashColorExt>()!;
+    final color = Theme.of(context).extension<SplashColorExt>()!;
     return Padding(
       padding: EdgeInsetsGeometry.only(top: 30.0),
-      child: CircularProgressIndicator(color: splashColors.loading, strokeWidth: 4),
+      child: CircularProgressIndicator(color: color.loading, strokeWidth: 4),
     );
   }
 }

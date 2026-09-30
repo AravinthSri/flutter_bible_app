@@ -10,11 +10,11 @@ class BibleTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final appLocalizations = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final splashTypography = theme.extension<SplashTypographyExt>()!;
-    final splashColor = theme.extension<SplashColorExt>()!;
+    final typography = theme.extension<SplashTypographyExt>()!;
+    final color = theme.extension<SplashColorExt>()!;
     return Text(
       appLocalizations.title,
-      style: splashTypography.title.copyWith(color: splashColor.title),
+      style: typography.title.copyWith(color: color.title),
     );
   }
 }

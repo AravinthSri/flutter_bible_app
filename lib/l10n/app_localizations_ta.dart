@@ -15,5 +15,12 @@ class AppLocalizationsTa extends AppLocalizations {
   String get subTitle => 'வாசியுங்கள். ஆராயுங்கள். வளருங்கள்.';
 
   @override
-  String get homeScreenTitle => 'Bible Translations';
+  String get homeScreenTitle => 'பைபிள் மொழிபெயர்ப்புகள்';
+
+  @override
+  String get homeLoadingContent => 'மொழிபெயர்ப்புகள் ஏற்றுகிறது...';
+
+  @override
+  String get homeLoadingDescription =>
+      'கிடைக்கும் மொழிபெயர்ப்புகளை பெறுவதற்காக காத்திருங்கள்';
 }

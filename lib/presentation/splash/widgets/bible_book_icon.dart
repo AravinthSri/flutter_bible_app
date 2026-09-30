@@ -6,7 +6,7 @@ class BibleBookIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final splashColors = Theme.of(context).extension<SplashColorExt>()!;
-    return Icon(Icons.menu_book, size: 160, color: splashColors.icon);
+    final color = Theme.of(context).extension<SplashColorExt>()!;
+    return Icon(Icons.menu_book, size: 160, color: color.icon);
   }
 }

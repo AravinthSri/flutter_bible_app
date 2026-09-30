@@ -115,6 +115,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Bible Translations'**
   String get homeScreenTitle;
+
+  /// Home screen loading content
+  ///
+  /// In en, this message translates to:
+  /// **'Loading translations...'**
+  String get homeLoadingContent;
+
+  /// Home screen loading description
+  ///
+  /// In en, this message translates to:
+  /// **'Please wait while we fetch available translations'**
+  String get homeLoadingDescription;
 }
 
 class _AppLocalizationsDelegate

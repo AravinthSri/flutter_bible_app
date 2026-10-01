@@ -14,13 +14,13 @@ class HomeTypography {
       return HomeTypographyExt(
         title: TextStyle(
           fontFamily: font,
-          fontSize: 32,
+          fontSize: 18,
           fontWeight: FontWeight.w700,
           letterSpacing: -0.5,
         ),
         loadingTitle: TextStyle(
           fontFamily: font,
-          fontSize: 24,
+          fontSize: 16,
           fontWeight: FontWeight.w700,
         ),
         loadingDescription: TextStyle(
@@ -30,7 +30,7 @@ class HomeTypography {
         ),
         itemTitle: TextStyle(
           fontFamily: font,
-          fontSize: 20,
+          fontSize: 16,
           fontWeight: FontWeight.w700,
         ),
         itemDescription: TextStyle(
@@ -40,7 +40,7 @@ class HomeTypography {
         ),
         itemShortUsername: TextStyle(
           fontFamily: font,
-          fontSize: 14,
+          fontSize: 12,
           fontWeight: FontWeight.w700,
         ),
       );

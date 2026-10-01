@@ -23,4 +23,25 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get homeLoadingDescription =>
       'Please wait while we fetch available translations';
+
+  @override
+  String get homeFilterAll => 'All';
+
+  @override
+  String get homeFilterAllLanguages => 'All Languages';
+
+  @override
+  String get homeFilterEnglish => 'English';
+
+  @override
+  String get homeFilterChinese => 'Chinese';
+
+  @override
+  String get homeFilterCzech => 'Czech';
+
+  @override
+  String get homeFilterLatin => 'Latin';
+
+  @override
+  String get homeFilterPortuguese => 'Portuguese';
 }

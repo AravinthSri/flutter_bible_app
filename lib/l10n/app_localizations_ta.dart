@@ -23,4 +23,25 @@ class AppLocalizationsTa extends AppLocalizations {
   @override
   String get homeLoadingDescription =>
       'கிடைக்கும் மொழிபெயர்ப்புகளை பெறுவதற்காக காத்திருங்கள்';
+
+  @override
+  String get homeFilterAll => 'அனைத்தும்';
+
+  @override
+  String get homeFilterAllLanguages => 'அனைத்து மொழிகளும்';
+
+  @override
+  String get homeFilterEnglish => 'ஆங்கிலம்';
+
+  @override
+  String get homeFilterChinese => 'சீனம்';
+
+  @override
+  String get homeFilterCzech => 'செக்';
+
+  @override
+  String get homeFilterLatin => 'லத்தீன்';
+
+  @override
+  String get homeFilterPortuguese => 'போர்ச்சுகீஸ்';
 }

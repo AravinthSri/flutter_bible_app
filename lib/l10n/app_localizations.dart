@@ -127,6 +127,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please wait while we fetch available translations'**
   String get homeLoadingDescription;
+
+  /// Home screen filter all option
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get homeFilterAll;
+
+  /// Home screen filter all languages option
+  ///
+  /// In en, this message translates to:
+  /// **'All Languages'**
+  String get homeFilterAllLanguages;
+
+  /// Home screen filter english option
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get homeFilterEnglish;
+
+  /// Home screen filter chinese option
+  ///
+  /// In en, this message translates to:
+  /// **'Chinese'**
+  String get homeFilterChinese;
+
+  /// Home screen filter czech option
+  ///
+  /// In en, this message translates to:
+  /// **'Czech'**
+  String get homeFilterCzech;
+
+  /// Home screen filter latin option
+  ///
+  /// In en, this message translates to:
+  /// **'Latin'**
+  String get homeFilterLatin;
+
+  /// Home screen filter portuguese option
+  ///
+  /// In en, this message translates to:
+  /// **'Portuguese'**
+  String get homeFilterPortuguese;
 }
 
 class _AppLocalizationsDelegate

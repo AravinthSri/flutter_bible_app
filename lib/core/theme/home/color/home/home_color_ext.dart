@@ -14,6 +14,11 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
   final Color? icon;
   final Color? progress;
   final Color? loading;
+  final Color? searchBarBackground;
+  final Color? searchBarBorder;
+  final Color? searchBarIcon;
+  
+
 
   const HomeColorExt({
     required this.background,
@@ -26,7 +31,10 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
     required this.circle3,
     required this.icon,
     required this.progress,
-    required this.loading,
+    required this.loading, 
+    required this.searchBarBackground,
+    required this.searchBarBorder,
+    required this.searchBarIcon,
   });
 
   static const light = HomeColorExt(
@@ -41,6 +49,9 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
     icon: AppColor.primary,
     progress: HomeColor.homeLoadingProgressLight,
     loading: AppColor.primary,
+    searchBarBackground: Color(0xFFF1F3F5), 
+    searchBarBorder: Color(0xFFF4F6F7),
+    searchBarIcon: Color(0xFF505152),
   );
 
   static const dark = HomeColorExt(
@@ -55,6 +66,9 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
     icon: AppColor.primary,
     progress: HomeColor.homeLoadingProgressDark,
     loading: AppColor.primary,
+    searchBarBackground: Color(0xFF16212F),
+    searchBarBorder: Color(0xFF293545),
+    searchBarIcon: Color(0xFFBDC5D2),
   );
 
   @override
@@ -70,6 +84,9 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
     Color? icon,
     Color? progress,
     Color? loading,
+    Color? searchBarBackground,
+    Color? searchBarBorder,
+    Color? searchBarIcon,
   }) {
     if (background == null &&
         appBarTitle == null &&
@@ -81,7 +98,11 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
         circle3 == null &&
         progress == null &&
         loading == null &&
-        icon == null) {
+        searchBarBackground == null &&
+        searchBarBorder == null &&
+        searchBarIcon == null &&
+        icon == null
+        ) {
       return this;
     }
 
@@ -97,6 +118,9 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
       progress: progress ?? this.progress,
       loading: loading ?? this.loading,
       icon: icon ?? this.icon,
+      searchBarBackground: searchBarBackground ?? this.searchBarBackground,
+      searchBarBorder: searchBarBorder ?? this.searchBarBorder,
+      searchBarIcon: searchBarIcon ?? this.searchBarIcon,
     );
   }
 
@@ -124,7 +148,10 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
       circle3: Color.lerp(circle3, other.circle3, t),
       progress: Color.lerp(progress, other.progress, t),
       loading: Color.lerp(loading, other.loading, t),
-      icon: Color.lerp(icon, other.icon, t)
+      icon: Color.lerp(icon, other.icon, t),
+      searchBarBackground: Color.lerp(searchBarBackground, other.searchBarBackground, t),
+      searchBarBorder: Color.lerp(searchBarBorder, other.searchBarBorder, t),
+      searchBarIcon: Color.lerp(searchBarIcon, other.searchBarIcon, t),
     );
   }
 
@@ -142,7 +169,10 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
         other.circle3 == circle3 &&
         other.icon == icon &&
         other.progress == progress &&
-        other.loading == loading;
+        other.loading == loading &&
+        other.searchBarBackground == searchBarBackground &&
+        other.searchBarBorder == searchBarBorder &&
+        other.searchBarIcon == searchBarIcon;
   }
 
   @override
@@ -158,5 +188,8 @@ class HomeColorExt extends ThemeExtension<HomeColorExt> {
     icon,
     progress,
     loading,
+    searchBarBackground,
+    searchBarBorder,
+    searchBarIcon,
   );
 }

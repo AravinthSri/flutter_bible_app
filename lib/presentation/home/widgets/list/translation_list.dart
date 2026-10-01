@@ -1,6 +1,8 @@
 import 'package:bible_app/presentation/home/bloc/translation/translation_bloc.dart';
 import 'package:bible_app/presentation/home/bloc/translation/translation_state.dart';
 import 'package:bible_app/presentation/home/cubit/filter/filter_cubit.dart';
+import 'package:bible_app/presentation/home/widgets/filter/filter_chips.dart';
+import 'package:bible_app/presentation/home/widgets/filter/filter_icon.dart';
 import 'package:bible_app/presentation/home/widgets/list/translation_list_view.dart';
 import 'package:bible_app/presentation/home/widgets/loading/loading_view.dart';
 import 'package:bible_app/presentation/home/widgets/search/search_view.dart';
@@ -25,7 +27,13 @@ class TranslationList extends StatelessWidget {
           } else if (state is TranslationLoaded) {
             return const Column(
               children: [
-                SearchView(),
+                Row(
+                  children: [
+                    Expanded(child: SearchView()),
+                    FilterIcon(),
+                  ],
+                ),
+                LanguageFilterChips(),
                 Expanded(child: TranslationListView()),
               ],
             );

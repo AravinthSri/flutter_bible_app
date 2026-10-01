@@ -19,5 +19,33 @@
   "homeLoadingDescription": "Please wait while we fetch available translations",
   "@homeLoadingDescription": {
     "description": "Home screen loading description"
+  },
+  "homeFilterAll": "All",
+  "@homeFilterAll": {
+    "description": "Home screen filter all option"
+  },
+  "homeFilterAllLanguages": "All Languages",
+  "@homeFilterAllLanguages": {
+    "description": "Home screen filter all languages option"
+  },
+  "homeFilterEnglish": "English",
+  "@homeFilterEnglish": {
+    "description": "Home screen filter english option"
+  },
+  "homeFilterChinese": "Chinese",
+  "@homeFilterChinese": {
+    "description": "Home screen filter chinese option"
+  },
+  "homeFilterCzech": "Czech",
+  "@homeFilterCzech": {
+    "description": "Home screen filter czech option"
+  },
+  "homeFilterLatin": "Latin",
+  "@homeFilterLatin": {
+    "description": "Home screen filter latin option"
+  },
+  "homeFilterPortuguese": "Portuguese",
+  "@homeFilterPortuguese": {
+    "description": "Home screen filter portuguese option"
   }
 }

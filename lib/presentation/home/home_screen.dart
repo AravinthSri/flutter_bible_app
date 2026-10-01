@@ -34,6 +34,14 @@ class HomeScreen extends StatelessWidget {
             appLocalizations.homeScreenTitle,
             style: typography.title.copyWith(color: color.appBarTitle),
           ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                // TODO: Open Settings
+              },
+              icon: const Icon(Icons.settings_outlined),
+            ),
+          ],
         ),
         body: const TranslationList(),
       ),

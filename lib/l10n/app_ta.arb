@@ -10,14 +10,42 @@
   },
   "homeScreenTitle": "பைபிள் மொழிபெயர்ப்புகள்",
   "@homeScreenTitle": {
-    "description": "Home screen title"
+    "description": "முகப்புத் திரைத் தலைப்பு"
   },
   "homeLoadingContent": "மொழிபெயர்ப்புகள் ஏற்றுகிறது...",
   "@homeLoadingContent": {
-    "description": "Home screen loading content"
+    "description": "முகப்புத் திரை உள்ளடக்கத்தை ஏற்றுகிறது"
   },
   "homeLoadingDescription": "கிடைக்கும் மொழிபெயர்ப்புகளை பெறுவதற்காக காத்திருங்கள்",
   "@homeLoadingDescription": {
-    "description": "Home screen loading description"
+    "description": "முகப்புத் திரை ஏற்றுமதி விளக்கம்"
+  },
+  "homeFilterAll": "அனைத்தும்",
+  "@homeFilterAll": {
+    "description": "முகப்புத் திரை வடிவமைப்பு அனைத்தும்"
+  },
+  "homeFilterAllLanguages": "அனைத்து மொழிகளும்",
+  "@homeFilterAllLanguages": {
+    "description": "முகப்புத் திரை வடிவமைப்பு அனைத்து மொழிகளும்"
+  },
+  "homeFilterEnglish": "ஆங்கிலம்",
+  "@homeFilterEnglish": {
+    "description": "முகப்புத் திரை வடிவமைப்பு ஆங்கிலம்"
+  },
+  "homeFilterChinese": "சீனம்",
+  "@homeFilterChinese": {
+    "description": "முகப்புத் திரை வடிவமைப்பு சீனம்"
+  },
+  "homeFilterCzech": "செக்",
+  "@homeFilterCzech": {
+    "description": "முகப்புத் திரை வடிவமைப்பு செக்"
+  },
+  "homeFilterLatin": "லத்தீன்",
+  "@homeFilterLatin": {
+    "description": "முகப்புத் திரை வடிவமைப்பு லத்தீன்"
+  },
+  "homeFilterPortuguese": "போர்ச்சுகீஸ்",
+  "@homeFilterPortuguese": {
+    "description": "முகப்புத் திரை வடிவமைப்பு போர்ச்சுகீஸ்"
   }
 }

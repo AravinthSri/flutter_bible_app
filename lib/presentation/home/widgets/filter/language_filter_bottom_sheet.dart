@@ -1,13 +1,14 @@
+import 'package:bible_app/core/theme/home/color/home/home_bottom_sheet_filter_color_ext.dart';
 import 'package:bible_app/presentation/home/type/language_filter_enum.dart';
-import 'package:bible_app/presentation/home/widgets/filter/launage_filter_bottom_raido_button.dart';
+import 'package:bible_app/presentation/home/widgets/filter/language_filter_bottom_dragger.dart';
+import 'package:bible_app/presentation/home/widgets/filter/language_filter_bottom_lang_options.dart';
+import 'package:bible_app/presentation/home/widgets/filter/language_filter_bottom_title.dart';
+import 'package:bible_app/presentation/home/widgets/filter/language_filter_buttons.dart';
 
 import 'package:flutter/material.dart';
 
 class LanguageFilterBottomSheet extends StatefulWidget {
-  const LanguageFilterBottomSheet({
-    super.key,
-    required this.initialFilter,
-  });
+  const LanguageFilterBottomSheet({super.key, required this.initialFilter});
 
   final LanguageFilter initialFilter;
 
@@ -16,8 +17,7 @@ class LanguageFilterBottomSheet extends StatefulWidget {
       _LanguageFilterBottomSheetState();
 }
 
-class _LanguageFilterBottomSheetState
-    extends State<LanguageFilterBottomSheet> {
+class _LanguageFilterBottomSheetState extends State<LanguageFilterBottomSheet> {
   late LanguageFilter _selectedFilter;
 
   @override
@@ -29,153 +29,52 @@ class _LanguageFilterBottomSheetState
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.sizeOf(context).height;
-
+    final theme = Theme.of(context)!;
+    final color = theme.extension<HomeBottomSheetColorFilterExt>()!;
     return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxHeight: screenHeight * 0.85,
-      ),
+      constraints: BoxConstraints(maxHeight: screenHeight * 0.85),
       child: Container(
         width: double.infinity,
-        decoration: const BoxDecoration(
-          color: Color(0xFF0D1724),
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(28),
-          ),
+        decoration: BoxDecoration(
+          color: color.background,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
         ),
         child: SafeArea(
           top: false,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(
-              20,
-              20,
-              20,
-              16,
-            ),
-            child: _buildContent(),
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 16),
+            child: _buildContent(color),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildContent() {
+  Widget _buildContent(HomeBottomSheetColorFilterExt color) {
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildTitle(),
-
+          const LanguageFilterBottomDragger(),
+          const SizedBox(height: 20),
+          const LanguageFilterTitle(),
           const SizedBox(height: 16),
+          LanguageFilterLanguageOptions(
+            selectedFilter: _selectedFilter,
+            onChanged: (value) {
+              setState(() {
+                _selectedFilter = value;
+              });
+            },
+          ),
 
-          _buildLanguageOptions(),
-
+          
           const SizedBox(height: 20),
 
-          _buildActions(),
+          LanguageFilterBottoms(selectedFilter: _selectedFilter),
         ],
       ),
-    );
-  }
-
-  Widget _buildTitle() {
-    return const Text(
-      'Filter by Language',
-      style: TextStyle(
-        color: Color(0xFFF5F7FB),
-        fontSize: 20,
-        fontWeight: FontWeight.w700,
-      ),
-    );
-  }
-
-  Widget _buildLanguageOptions() {
-    return RadioGroup<LanguageFilter>(
-      groupValue: _selectedFilter,
-      onChanged: (LanguageFilter? value) {
-        if (value == null) {
-          return;
-        }
-
-        setState(() {
-          _selectedFilter = value;
-        });
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          for (final filter in LanguageFilter.values)
-            LanguageFilterBottomRadioButton(
-              filter: filter,
-              onSelected: (value) {
-                setState(() {
-                  _selectedFilter = value;
-                });
-              },
-            ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildActions() {
-    return Row(
-      children: [
-        Expanded(
-          child: OutlinedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            style: OutlinedButton.styleFrom(
-              minimumSize: const Size.fromHeight(52),
-              side: const BorderSide(
-                color: Color(0xFF1683FF),
-                width: 1.5,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14),
-              ),
-            ),
-            child: const Text(
-              'Cancel',
-              style: TextStyle(
-                color: Color(0xFF42A5FF),
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ),
-
-        const SizedBox(width: 12),
-
-        Expanded(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(
-                context,
-                _selectedFilter,
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF1683FF),
-              foregroundColor: Colors.white,
-              minimumSize: const Size.fromHeight(52),
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14),
-              ),
-            ),
-            child: const Text(
-              'Apply',
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

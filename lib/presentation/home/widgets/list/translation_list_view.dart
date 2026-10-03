@@ -10,6 +10,10 @@ class TranslationListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FilterCubit, FilterState>(
+      buildWhen: (previous, current) => !identical(
+        previous.filteredTranslations,
+        current.filteredTranslations,
+      ),
       builder: (context, state) {
         final translations = state.filteredTranslations;
 
@@ -18,10 +22,15 @@ class TranslationListView extends StatelessWidget {
         }
 
         return ListView.builder(
+          itemExtent: TranslationItemCard.extent,
           itemCount: translations.length,
           itemBuilder: (context, index) {
             final translation = translations[index];
-            return TranslationItemCard(translation: translation, index: index);
+            return TranslationItemCard(
+              key: ValueKey(translation.identifier),
+              translation: translation,
+              index: index,
+            );
           },
         );
       },

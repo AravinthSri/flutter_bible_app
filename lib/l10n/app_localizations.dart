@@ -169,6 +169,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Portuguese'**
   String get homeFilterPortuguese;
+
+  /// Home screen bottom filter title
+  ///
+  /// In en, this message translates to:
+  /// **'Filter by Language'**
+  String get homeBottomFilterTitle;
+
+  /// Home screen bottom filter apply text
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get homeBottomApplyText;
+
+  /// Home screen bottom filter cancel text
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get homeBottomCancelText;
 }
 
 class _AppLocalizationsDelegate

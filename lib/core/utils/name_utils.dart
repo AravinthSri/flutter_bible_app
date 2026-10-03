@@ -11,15 +11,28 @@ class NameUtils {
     'an',
   };
 
+  static final _whitespace = RegExp(r'\s+');
+  static final _nonLetters = RegExp(r'[^A-Za-zÀ-ÖØ-öø-ÿ]');
+  static final _digitsOnly = RegExp(r'^\d+$');
+  static final Map<String, String> _shortNameCache = {};
+
   static String getShortName(String fullName) {
+    final cached = _shortNameCache[fullName];
+    if (cached != null) {
+      return cached;
+    }
+
+    final shortName = _computeShortName(fullName);
+    _shortNameCache[fullName] = shortName;
+    return shortName;
+  }
+
+  static String _computeShortName(String fullName) {
     final words = fullName
         .trim()
-        .split(RegExp(r'\s+'))
+        .split(_whitespace)
         .where((word) {
-          final cleanedWord = word.replaceAll(
-            RegExp(r'[^A-Za-zÀ-ÖØ-öø-ÿ]'),
-            '',
-          );
+          final cleanedWord = word.replaceAll(_nonLetters, '');
 
           if (cleanedWord.isEmpty) {
             return false;
@@ -30,7 +43,7 @@ class NameUtils {
           }
 
           // Ignore words containing only numbers
-          if (RegExp(r'^\d+$').hasMatch(word)) {
+          if (_digitsOnly.hasMatch(word)) {
             return false;
           }
 

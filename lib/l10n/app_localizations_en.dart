@@ -44,4 +44,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeFilterPortuguese => 'Portuguese';
+
+  @override
+  String get homeBottomFilterTitle => 'Filter by Language';
+
+  @override
+  String get homeBottomApplyText => 'Apply';
+
+  @override
+  String get homeBottomCancelText => 'Cancel';
 }

@@ -11,6 +11,8 @@ class FilterCubit extends Cubit<FilterState> {
   final List<TranslationItemEntities> _allTranslations = [];
 
   Timer? _debounce;
+  String _searchQuery = '';
+  LanguageFilter _selectedLanguage = LanguageFilter.all;
 
   void setTranslations(
     List<TranslationItemEntities> translations,
@@ -23,14 +25,8 @@ class FilterCubit extends Cubit<FilterState> {
   }
 
   void search(String query) {
-    emit(
-      state.copyWith(
-        searchQuery: query,
-      ),
-    );
-
+    _searchQuery = query;
     _debounce?.cancel();
-
     _debounce = Timer(
       const Duration(milliseconds: 300),
       _applyFilters,
@@ -38,42 +34,26 @@ class FilterCubit extends Cubit<FilterState> {
   }
 
   void selectLanguage(LanguageFilter language) {
-    emit(
-      state.copyWith(
-        selectedLanguage: language,
-      ),
-    );
-
+    _selectedLanguage = language;
     _applyFilters();
   }
 
   void clearSearch() {
     _debounce?.cancel();
-
-    emit(
-      state.copyWith(
-        searchQuery: '',
-      ),
-    );
-
+    _searchQuery = '';
     _applyFilters();
   }
 
   void clearFilters() {
     _debounce?.cancel();
-
-    emit(
-      state.copyWith(
-        searchQuery: '',
-        selectedLanguage: LanguageFilter.all,
-      ),
-    );
-
+    _searchQuery = '';
+    _selectedLanguage = LanguageFilter.all;
     _applyFilters();
   }
 
   void _applyFilters() {
-    final query = state.searchQuery.trim().toLowerCase();
+    final query = _searchQuery.trim().toLowerCase();
+    final language = _selectedLanguage;
 
     final results = _allTranslations.where((translation) {
       final matchesSearch = _matchesSearch(
@@ -83,17 +63,44 @@ class FilterCubit extends Cubit<FilterState> {
 
       final matchesLanguage = _matchesLanguage(
         translation,
-        state.selectedLanguage,
+        language,
       );
 
       return matchesSearch && matchesLanguage;
     }).toList();
 
+    final translations = _sameTranslations(results, state.filteredTranslations)
+        ? state.filteredTranslations
+        : results;
+
+    if (state.searchQuery == _searchQuery &&
+        state.selectedLanguage == language &&
+        identical(state.filteredTranslations, translations)) {
+      return;
+    }
+
     emit(
       state.copyWith(
-        filteredTranslations: results,
+        searchQuery: _searchQuery,
+        selectedLanguage: language,
+        filteredTranslations: translations,
       ),
     );
+  }
+
+  bool _sameTranslations(
+    List<TranslationItemEntities> next,
+    List<TranslationItemEntities> current,
+  ) {
+    if (next.length != current.length) {
+      return false;
+    }
+    for (var i = 0; i < next.length; i++) {
+      if (next[i].identifier != current[i].identifier) {
+        return false;
+      }
+    }
+    return true;
   }
 
   bool _matchesSearch(

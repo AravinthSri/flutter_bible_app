@@ -7,6 +7,7 @@ class HomeTypographyExt extends ThemeExtension<HomeTypographyExt> {
   final TextStyle itemTitle;
   final TextStyle itemDescription;
   final TextStyle itemShortUsername;
+  final TextStyle? filterBottomSheetTitle;
 
   const HomeTypographyExt({
     required this.title,
@@ -15,6 +16,7 @@ class HomeTypographyExt extends ThemeExtension<HomeTypographyExt> {
     required this.itemTitle,
     required this.itemDescription,
     required this.itemShortUsername,
+    required this.filterBottomSheetTitle,
   });
 
   @override
@@ -25,6 +27,7 @@ class HomeTypographyExt extends ThemeExtension<HomeTypographyExt> {
     TextStyle? itemTitle,
     TextStyle? itemDescription,
     TextStyle? itemShortUsername,
+    TextStyle? filterBottomSheetTitle,
   }) {
     return HomeTypographyExt(
       title: title ?? this.title,
@@ -33,6 +36,7 @@ class HomeTypographyExt extends ThemeExtension<HomeTypographyExt> {
       itemTitle: itemTitle ?? this.itemTitle,
       itemDescription: itemDescription ?? this.itemDescription,
       itemShortUsername: itemShortUsername ?? this.itemShortUsername,
+      filterBottomSheetTitle: filterBottomSheetTitle ?? this.filterBottomSheetTitle,
     );
   }
 
@@ -60,6 +64,11 @@ class HomeTypographyExt extends ThemeExtension<HomeTypographyExt> {
         other.itemShortUsername,
         t,
       )!,
+      filterBottomSheetTitle: TextStyle.lerp(
+        filterBottomSheetTitle,
+        other.filterBottomSheetTitle,
+        t,
+      )!,
     );
   }
 
@@ -72,7 +81,8 @@ class HomeTypographyExt extends ThemeExtension<HomeTypographyExt> {
         other.loadingDescription == loadingDescription &&
         other.itemTitle == itemTitle &&
         other.itemDescription == itemDescription &&
-        other.itemShortUsername == itemShortUsername;
+        other.itemShortUsername == itemShortUsername
+        && other.filterBottomSheetTitle == filterBottomSheetTitle;
   }
 
   @override
@@ -83,5 +93,6 @@ class HomeTypographyExt extends ThemeExtension<HomeTypographyExt> {
     itemTitle,
     itemDescription,
     itemShortUsername,
+    filterBottomSheetTitle,
   );
 }

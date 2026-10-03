@@ -1,5 +1,6 @@
 import 'package:bible_app/core/theme/app_color.dart';
 import 'package:bible_app/core/theme/home/color/avatar/avatar_colors_ext.dart';
+import 'package:bible_app/core/theme/home/color/home/home_bottom_sheet_filter_color_ext.dart';
 import 'package:bible_app/core/theme/home/color/home/home_color_ext.dart';
 import 'package:bible_app/core/theme/home/color/home/home_filter_color_ext.dart';
 import 'package:bible_app/core/theme/home/typography/home_typography.dart';
@@ -38,6 +39,7 @@ class AppTheme {
         HomeColorExt.light,
         HomeFilterColorExt.light,
         AvatarColorExtension.light,
+        HomeBottomSheetColorFilterExt.light,
         HomeTypography.build(locale),
       ],
     );
@@ -57,6 +59,7 @@ class AppTheme {
         HomeColorExt.dark,
         HomeFilterColorExt.dark,
         AvatarColorExtension.dark,
+        HomeBottomSheetColorFilterExt.dark,
         HomeTypography.build(locale),
       ],
     );

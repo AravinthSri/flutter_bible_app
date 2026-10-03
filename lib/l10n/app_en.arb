@@ -47,5 +47,17 @@
   "homeFilterPortuguese": "Portuguese",
   "@homeFilterPortuguese": {
     "description": "Home screen filter portuguese option"
+  },
+  "homeBottomFilterTitle": "Filter by Language",
+  "@homeBottomFilterTitle": {
+    "description": "Home screen bottom filter title"
+  },
+  "homeBottomApplyText": "Apply",
+  "@homeBottomApplyText": {
+    "description": "Home screen bottom filter apply text"
+  },
+  "homeBottomCancelText": "Cancel",
+  "@homeBottomCancelText": {
+    "description": "Home screen bottom filter cancel text"
   }
 }

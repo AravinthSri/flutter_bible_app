@@ -18,21 +18,23 @@ class TranslationItemInfoView extends StatelessWidget {
     final color = theme.extension<HomeColorExt>()!;
     final typography = theme.extension<HomeTypographyExt>()!;
     return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              name,
-              style: typography.itemTitle.copyWith(color: color.title),
-            ),
-            Text(
-              language,
-              style: typography.itemDescription.copyWith(color: color.subTitle),
-            ),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: typography.itemTitle.copyWith(color: color.title),
+          ),
+          Text(
+            language,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: typography.itemDescription.copyWith(color: color.subTitle),
+          ),
+        ],
       ),
     );
   }

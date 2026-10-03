@@ -47,5 +47,17 @@
   "homeFilterPortuguese": "போர்ச்சுகீஸ்",
   "@homeFilterPortuguese": {
     "description": "முகப்புத் திரை வடிவமைப்பு போர்ச்சுகீஸ்"
+  },
+  "homeBottomFilterTitle": "மொழியால் வடிவமைக்கவும்",
+  "@homeBottomFilterTitle": {
+    "description": "Home screen bottom filter title"
+  },
+  "homeBottomApplyText": "செயல்படுத்து",
+  "@homeBottomApplyText": {
+    "description": "Home screen bottom filter apply text"
+  },
+  "homeBottomCancelText": "ரத்து செய்",
+  "@homeBottomCancelText": {
+    "description": "Home screen bottom filter cancel text"
   }
 }

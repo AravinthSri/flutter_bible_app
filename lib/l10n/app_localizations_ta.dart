@@ -44,4 +44,13 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get homeFilterPortuguese => 'போர்ச்சுகீஸ்';
+
+  @override
+  String get homeBottomFilterTitle => 'மொழியால் வடிவமைக்கவும்';
+
+  @override
+  String get homeBottomApplyText => 'செயல்படுத்து';
+
+  @override
+  String get homeBottomCancelText => 'ரத்து செய்';
 }

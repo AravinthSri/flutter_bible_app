@@ -43,6 +43,11 @@ class HomeTypography {
           fontSize: 12,
           fontWeight: FontWeight.w700,
         ),
+        filterBottomSheetTitle: TextStyle(
+          fontFamily: font,
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+        ),
       );
     });
   }

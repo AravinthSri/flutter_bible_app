@@ -1,3 +1,5 @@
+import 'package:bible_app/core/theme/app_color.dart';
+import 'package:bible_app/core/theme/home/color/home/home_bottom_sheet_filter_color_ext.dart';
 import 'package:bible_app/presentation/home/type/language_filter_enum.dart';
 import 'package:flutter/material.dart';
 
@@ -5,18 +7,31 @@ class LanguageFilterBottomRadioButton extends StatelessWidget {
   const LanguageFilterBottomRadioButton({
     super.key,
     required this.filter,
+    required this.selectedFilter,
     required this.onSelected,
   });
 
   final LanguageFilter filter;
+  final LanguageFilter selectedFilter;
   final ValueChanged<LanguageFilter> onSelected;
 
   @override
   Widget build(BuildContext context) {
+    final isSelected = selectedFilter == filter;
+    final theme = Theme.of(context);
+    final color = theme.extension<HomeBottomSheetColorFilterExt>()!;
+
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
+        color: isSelected
+            ? color.filterItemSelectedBackground
+            : color.filterItemDefaultBackground,
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: isSelected
+              ? color.filterItemSelectedBorder!
+              : color.filterItemDefaultBorder!,
+        ),
       ),
       child: InkWell(
         onTap: () {
@@ -32,8 +47,10 @@ class LanguageFilterBottomRadioButton extends StatelessWidget {
               Expanded(
                 child: Text(
                   filter.label,
-                  style: const TextStyle(
-                    color: Color(0xFFF5F7FB),
+                  style: TextStyle(
+                    color: isSelected
+                        ? color.filterItemTitleSelected
+                        : color.filterItemTitleDefault,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
@@ -42,7 +59,7 @@ class LanguageFilterBottomRadioButton extends StatelessWidget {
 
               Radio<LanguageFilter>(
                 value: filter,
-                activeColor: const Color(0xFF1683FF),
+                activeColor:  AppColor.primary,
               ),
 
               const SizedBox(width: 8),

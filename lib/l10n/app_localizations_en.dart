@@ -53,4 +53,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeBottomCancelText => 'Cancel';
+
+  @override
+  String get settingsTitle => 'Setting';
+
+  @override
+  String get settingsAppLanguageTitle => 'App Language';
+
+  @override
+  String get settingsThemeTitle => 'Theme';
+
+  @override
+  String get settingsEnglish => 'English';
+
+  @override
+  String get settingsTamil => 'Tamil';
+
+  @override
+  String get settingsLight => 'Light';
+
+  @override
+  String get settingsDark => 'Dark';
+
+  @override
+  String get settingsAppVersionLabel => 'App Version';
 }

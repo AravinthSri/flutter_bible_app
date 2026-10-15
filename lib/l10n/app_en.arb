@@ -59,5 +59,37 @@
   "homeBottomCancelText": "Cancel",
   "@homeBottomCancelText": {
     "description": "Home screen bottom filter cancel text"
+  },
+  "settingsTitle": "Setting",
+  "@settingsTitle": {
+    "description": "Settings screen app bar title"
+  },
+  "settingsAppLanguageTitle": "App Language",
+  "@settingsAppLanguageTitle": {
+    "description": "Settings app language section title"
+  },
+  "settingsThemeTitle": "Theme",
+  "@settingsThemeTitle": {
+    "description": "Settings theme section title"
+  },
+  "settingsEnglish": "English",
+  "@settingsEnglish": {
+    "description": "Settings English language option"
+  },
+  "settingsTamil": "Tamil",
+  "@settingsTamil": {
+    "description": "Settings Tamil language option"
+  },
+  "settingsLight": "Light",
+  "@settingsLight": {
+    "description": "Settings light theme option"
+  },
+  "settingsDark": "Dark",
+  "@settingsDark": {
+    "description": "Settings dark theme option"
+  },
+  "settingsAppVersionLabel": "App Version",
+  "@settingsAppVersionLabel": {
+    "description": "Settings app version label"
   }
 }

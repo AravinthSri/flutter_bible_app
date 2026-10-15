@@ -1,4 +1,6 @@
 import 'package:bible_app/core/theme/home/color/home/home_filter_color_ext.dart';
+import 'package:bible_app/core/utils/language_filter_utils.dart';
+import 'package:bible_app/l10n/app_localizations.dart';
 import 'package:bible_app/presentation/home/cubit/filter/filter_cubit.dart';
 import 'package:bible_app/presentation/home/cubit/filter/filter_state.dart';
 import 'package:bible_app/presentation/home/type/language_filter_enum.dart';
@@ -9,17 +11,14 @@ class LanguageFilterChips extends StatefulWidget {
   const LanguageFilterChips({super.key});
 
   @override
-  State<LanguageFilterChips> createState() =>
-      _LanguageFilterChipsState();
+  State<LanguageFilterChips> createState() => _LanguageFilterChipsState();
 }
 
-class _LanguageFilterChipsState
-    extends State<LanguageFilterChips> {
+class _LanguageFilterChipsState extends State<LanguageFilterChips> {
   final ScrollController _scrollController = ScrollController();
 
   final Map<LanguageFilter, GlobalKey> _chipKeys = {
-    for (final filter in LanguageFilter.values)
-      filter: GlobalKey(),
+    for (final filter in LanguageFilter.values) filter: GlobalKey(),
   };
 
   @override
@@ -49,35 +48,28 @@ class _LanguageFilterChipsState
   Widget build(BuildContext context) {
     final theme = Theme.of(context)!;
     final color = theme.extension<HomeFilterColorExt>()!;
+    final l10n = AppLocalizations.of(context)!;
     return BlocConsumer<FilterCubit, FilterState>(
       listenWhen: (previous, current) =>
-          previous.selectedLanguage !=
-          current.selectedLanguage,
+          previous.selectedLanguage != current.selectedLanguage,
       listener: (context, state) {
         _scrollToSelected(state.selectedLanguage);
       },
       buildWhen: (previous, current) =>
-          previous.selectedLanguage !=
-          current.selectedLanguage,
+          previous.selectedLanguage != current.selectedLanguage,
       builder: (context, state) {
         return Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 8.0,
-          ),
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: SizedBox(
             height: 40,
             child: ListView.separated(
               controller: _scrollController,
               scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: LanguageFilter.values.length,
-              separatorBuilder: (_, _) =>
-                  const SizedBox(width: 8),
+              separatorBuilder: (_, _) => const SizedBox(width: 8),
               itemBuilder: (context, index) {
                 final filter = LanguageFilter.values[index];
-
                 return KeyedSubtree(
                   key: _chipKeys[filter],
                   child: ChoiceChip(
@@ -85,19 +77,16 @@ class _LanguageFilterChipsState
                     selectedColor: color.filterChipBackgroundSelected,
                     backgroundColor: color.filterChipBackgroundDefault,
                     label: Text(
-                      _label(filter),
+                      LanguageFilterUtils.getLabel(filter, l10n, false),
                       style: TextStyle(
                         color: state.selectedLanguage == filter
                             ? color.filterChipTextSelected
                             : color.filterChipTextDefault,
                       ),
                     ),
-                    selected:
-                        state.selectedLanguage == filter,
+                    selected: state.selectedLanguage == filter,
                     onSelected: (_) {
-                      context
-                          .read<FilterCubit>()
-                          .selectLanguage(filter);
+                      context.read<FilterCubit>().selectLanguage(filter);
                     },
                   ),
                 );
@@ -107,27 +96,5 @@ class _LanguageFilterChipsState
         );
       },
     );
-  }
-
-  String _label(LanguageFilter filter) {
-    switch (filter) {
-      case LanguageFilter.all:
-        return 'All';
-
-      case LanguageFilter.english:
-        return 'English';
-
-      case LanguageFilter.chinese:
-        return 'Chinese';
-
-      case LanguageFilter.czech:
-        return 'Czech';
-
-      case LanguageFilter.latin:
-        return 'Latin';
-
-      case LanguageFilter.portuguese:
-        return 'Portuguese';
-    }
   }
 }

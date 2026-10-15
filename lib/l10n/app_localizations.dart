@@ -187,6 +187,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel'**
   String get homeBottomCancelText;
+
+  /// Settings screen app bar title
+  ///
+  /// In en, this message translates to:
+  /// **'Setting'**
+  String get settingsTitle;
+
+  /// Settings app language section title
+  ///
+  /// In en, this message translates to:
+  /// **'App Language'**
+  String get settingsAppLanguageTitle;
+
+  /// Settings theme section title
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get settingsThemeTitle;
+
+  /// Settings English language option
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get settingsEnglish;
+
+  /// Settings Tamil language option
+  ///
+  /// In en, this message translates to:
+  /// **'Tamil'**
+  String get settingsTamil;
+
+  /// Settings light theme option
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get settingsLight;
+
+  /// Settings dark theme option
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get settingsDark;
+
+  /// Settings app version label
+  ///
+  /// In en, this message translates to:
+  /// **'App Version'**
+  String get settingsAppVersionLabel;
 }
 
 class _AppLocalizationsDelegate

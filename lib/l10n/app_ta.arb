@@ -59,5 +59,37 @@
   "homeBottomCancelText": "ரத்து செய்",
   "@homeBottomCancelText": {
     "description": "Home screen bottom filter cancel text"
+  },
+  "settingsTitle": "அமைப்பு",
+  "@settingsTitle": {
+    "description": "Settings screen app bar title"
+  },
+  "settingsAppLanguageTitle": "செயலி மொழி",
+  "@settingsAppLanguageTitle": {
+    "description": "Settings app language section title"
+  },
+  "settingsThemeTitle": "தீம்",
+  "@settingsThemeTitle": {
+    "description": "Settings theme section title"
+  },
+  "settingsEnglish": "ஆங்கிலம்",
+  "@settingsEnglish": {
+    "description": "Settings English language option"
+  },
+  "settingsTamil": "தமிழ்",
+  "@settingsTamil": {
+    "description": "Settings Tamil language option"
+  },
+  "settingsLight": "வெளிச்சம்",
+  "@settingsLight": {
+    "description": "Settings light theme option"
+  },
+  "settingsDark": "இருள்",
+  "@settingsDark": {
+    "description": "Settings dark theme option"
+  },
+  "settingsAppVersionLabel": "செயலி பதிப்பு",
+  "@settingsAppVersionLabel": {
+    "description": "Settings app version label"
   }
 }

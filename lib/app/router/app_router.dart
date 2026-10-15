@@ -4,5 +4,5 @@ import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: AppDeeplink.splash,
-  routes: [AppRoute.splash, AppRoute.home],
+  routes: [AppRoute.splash, AppRoute.home, AppRoute.settings],
 );

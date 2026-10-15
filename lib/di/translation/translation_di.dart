@@ -1,5 +1,5 @@
-import 'package:bible_app/data/datasoruce/translation/translation_remote_datascource_impl.dart';
-import 'package:bible_app/data/datasoruce/translation/translation_remote_datasource.dart';
+import 'package:bible_app/data/datasource/translation/translation_remote_datascource_impl.dart';
+import 'package:bible_app/data/datasource/translation/translation_remote_datasource.dart';
 import 'package:bible_app/domain/repositories/translation_repository.dart';
 import 'package:bible_app/domain/usecases/get_translation_usecase.dart';
 import 'package:bible_app/data/repositories/translation_repository_impl.dart';

@@ -1,5 +1,6 @@
 import 'package:bible_app/app/router/app_deeplink.dart';
 import 'package:bible_app/presentation/home/home_screen.dart';
+import 'package:bible_app/presentation/settings/setting_screen.dart';
 import 'package:bible_app/presentation/splash/cubit/splash_cubit.dart';
 import 'package:bible_app/presentation/splash/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +27,13 @@ class AppRoute {
     path: AppDeeplink.home,
     builder: (context, state) {
       return const HomeScreen();
+    },
+  );
+
+  static final GoRoute settings = GoRoute(
+    path: AppDeeplink.settings,
+    builder: (context, state) {
+      return const SettingScreen();
     },
   );
 }

@@ -53,4 +53,28 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get homeBottomCancelText => 'ரத்து செய்';
+
+  @override
+  String get settingsTitle => 'அமைப்பு';
+
+  @override
+  String get settingsAppLanguageTitle => 'செயலி மொழி';
+
+  @override
+  String get settingsThemeTitle => 'தீம்';
+
+  @override
+  String get settingsEnglish => 'ஆங்கிலம்';
+
+  @override
+  String get settingsTamil => 'தமிழ்';
+
+  @override
+  String get settingsLight => 'வெளிச்சம்';
+
+  @override
+  String get settingsDark => 'இருள்';
+
+  @override
+  String get settingsAppVersionLabel => 'செயலி பதிப்பு';
 }

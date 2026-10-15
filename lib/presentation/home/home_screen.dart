@@ -1,3 +1,4 @@
+import 'package:bible_app/app/router/app_deeplink.dart';
 import 'package:bible_app/core/di/injection.dart';
 import 'package:bible_app/core/theme/home/color/home/home_color_ext.dart';
 import 'package:bible_app/core/theme/home/typography/home_typography_ext.dart';
@@ -8,6 +9,7 @@ import 'package:bible_app/presentation/home/cubit/filter/filter_cubit.dart';
 import 'package:bible_app/presentation/home/widgets/list/translation_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,7 +39,7 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
-                // TODO: Open Settings
+                context.push(AppDeeplink.settings);
               },
               icon: const Icon(Icons.settings_outlined),
             ),

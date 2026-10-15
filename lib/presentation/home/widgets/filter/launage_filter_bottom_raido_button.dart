@@ -1,5 +1,7 @@
 import 'package:bible_app/core/theme/app_color.dart';
 import 'package:bible_app/core/theme/home/color/home/home_bottom_sheet_filter_color_ext.dart';
+import 'package:bible_app/core/utils/language_filter_utils.dart';
+import 'package:bible_app/l10n/app_localizations.dart';
 import 'package:bible_app/presentation/home/type/language_filter_enum.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +22,7 @@ class LanguageFilterBottomRadioButton extends StatelessWidget {
     final isSelected = selectedFilter == filter;
     final theme = Theme.of(context);
     final color = theme.extension<HomeBottomSheetColorFilterExt>()!;
+    final l10n = AppLocalizations.of(context)!;
 
     return Container(
       decoration: BoxDecoration(
@@ -46,7 +49,7 @@ class LanguageFilterBottomRadioButton extends StatelessWidget {
 
               Expanded(
                 child: Text(
-                  filter.label,
+                  LanguageFilterUtils.getLabel(filter, l10n, true),
                   style: TextStyle(
                     color: isSelected
                         ? color.filterItemTitleSelected

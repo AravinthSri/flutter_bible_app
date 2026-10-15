@@ -14,16 +14,19 @@ class TranslationLoadingView extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const LoadingBibleIcon(),
           const SizedBox(height: 16),
           Text(
             localizations.homeLoadingContent,
+            textAlign: TextAlign.center,
             style: typography.loadingTitle,
           ),
           const SizedBox(height: 8),
           Text(
             localizations.homeLoadingDescription,
+            textAlign: TextAlign.center,
             style: typography.loadingDescription,
           ),
         ],
